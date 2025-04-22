@@ -1,0 +1,94 @@
+{
+  "DanhSachSach": [
+    {
+      "id": "2",
+      "ph11341_ten_sach_22042025": "Thiết Kế Giao Diện UI/UX",
+      "ph11341_tac_gia_22042025": "Trần Thị B",
+      "ph11341_gia_sach_22042025": 120000,
+      "ph11341_the_loai_22042025": "Thiết kế",
+      "ph11341_nam_phat_hanh_22042025": 2023,
+      "ph11341_mo_ta_22042025": "Hướng dẫn thiết kế giao diện người dùng một cách hiệu quả.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh2.jpg"
+    },
+    {
+      "id": "3",
+      "ph11341_ten_sach_22042025": "Kỹ Thuật Lập Trình Java",
+      "ph11341_tac_gia_22042025": "Lê Văn C",
+      "ph11341_gia_sach_22042025": 135000,
+      "ph11341_the_loai_22042025": "Công nghệ",
+      "ph11341_nam_phat_hanh_22042025": 2021,
+      "ph11341_mo_ta_22042025": "Tài liệu chuyên sâu về ngôn ngữ lập trình Java.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh3.jpg"
+    },
+    {
+      "id": "4",
+      "ph11341_ten_sach_22042025": "Học Máy Và Trí Tuệ Nhân Tạo",
+      "ph11341_tac_gia_22042025": "Phạm Minh D",
+      "ph11341_gia_sach_22042025": 160000,
+      "ph11341_the_loai_22042025": "Trí tuệ nhân tạo",
+      "ph11341_nam_phat_hanh_22042025": 2023,
+      "ph11341_mo_ta_22042025": "Giới thiệu các khái niệm nền tảng trong machine learning và AI.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh4.jpg"
+    },
+    {
+      "id": "5",
+      "ph11341_ten_sach_22042025": "Thiết Kế Web Toàn Tập",
+      "ph11341_tac_gia_22042025": "Lý Hoàng E",
+      "ph11341_gia_sach_22042025": 110000,
+      "ph11341_the_loai_22042025": "Web",
+      "ph11341_nam_phat_hanh_22042025": 2020,
+      "ph11341_mo_ta_22042025": "Hướng dẫn đầy đủ từ cơ bản đến nâng cao về thiết kế website.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh5.jpg"
+    },
+    {
+      "id": "6",
+      "ph11341_ten_sach_22042025": "Python Cho Người Mới Bắt Đầu",
+      "ph11341_tac_gia_22042025": "Nguyễn Thị F",
+      "ph11341_gia_sach_22042025": 99000,
+      "ph11341_the_loai_22042025": "Lập trình",
+      "ph11341_nam_phat_hanh_22042025": 2021,
+      "ph11341_mo_ta_22042025": "Học ngôn ngữ lập trình Python qua ví dụ dễ hiểu.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh6.jpg"
+    },
+    {
+      "id": "7",
+      "ph11341_ten_sach_22042025": "Phân Tích Dữ Liệu Với Excel",
+      "ph11341_tac_gia_22042025": "Hoàng Văn G",
+      "ph11341_gia_sach_22042025": 89000,
+      "ph11341_the_loai_22042025": "Phân tích dữ liệu",
+      "ph11341_nam_phat_hanh_22042025": 2022,
+      "ph11341_mo_ta_22042025": "Kỹ năng sử dụng Excel để phân tích và trực quan hóa dữ liệu.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh7.jpg"
+    },
+    {
+      "id": "8",
+      "ph11341_ten_sach_22042025": "Cấu Trúc Dữ Liệu Và Giải Thuật",
+      "ph11341_tac_gia_22042025": "Trịnh Thanh H",
+      "ph11341_gia_sach_22042025": 142000,
+      "ph11341_the_loai_22042025": "Khoa học máy tính",
+      "ph11341_nam_phat_hanh_22042025": 2019,
+      "ph11341_mo_ta_22042025": "Phân tích các thuật toán và cấu trúc dữ liệu phổ biến.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh8.jpg"
+    },
+    {
+      "id": "9",
+      "ph11341_ten_sach_22042025": "Hướng Dẫn React Native",
+      "ph11341_tac_gia_22042025": "Đỗ Thị I",
+      "ph11341_gia_sach_22042025": 125000,
+      "ph11341_the_loai_22042025": "Di động",
+      "ph11341_nam_phat_hanh_22042025": 2023,
+      "ph11341_mo_ta_22042025": "Tự học lập trình ứng dụng di động với React Native.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh9.jpg"
+    },
+    {
+      "id": "10",
+      "ph11341_ten_sach_22042025": "Cẩm Nang JavaScript Nâng Cao",
+      "ph11341_tac_gia_22042025": "Bùi Minh J",
+      "ph11341_gia_sach_22042025": 130000,
+      "ph11341_the_loai_22042025": "Web",
+      "ph11341_nam_phat_hanh_22042025": 2021,
+      "ph11341_mo_ta_22042025": "Dành cho lập trình viên muốn nâng cao kỹ năng JavaScript.",
+      "ph11341_anh_bia_22042025": "https://example.com/anh10.jpg"
+    }
+  ]
+}
