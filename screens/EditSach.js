@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert, Image, TouchableOpacity, PermissionsAndroid, Platform } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { updateSachAsync } from '../redux/Action';
 import * as ImagePicker from 'react-native-image-picker';
@@ -17,11 +17,42 @@ const EditSach = ({ route, navigation }) => {
   const [anhBia, setAnhBia] = useState(sach.ph11341_anh_bia_22042025);
   const [previewImage, setPreviewImage] = useState(sach.ph11341_anh_bia_22042025);
 
+  const requestCameraPermission = async () => {
+    if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+          {
+            title: "Quyền truy cập thư viện ảnh",
+            message: "Ứng dụng cần quyền truy cập thư viện ảnh để chọn ảnh bìa sách",
+            buttonNeutral: "Hỏi lại sau",
+            buttonNegative: "Từ chối",
+            buttonPositive: "Đồng ý"
+          }
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          return true;
+        } else {
+          Alert.alert('Thông báo', 'Bạn cần cấp quyền truy cập thư viện ảnh để sử dụng tính năng này');
+          return false;
+        }
+      } catch (err) {
+        console.warn(err);
+        return false;
+      }
+    }
+    return true;
+  };
+
   const handleChoosePhoto = async () => {
+    const hasPermission = await requestCameraPermission();
+    if (!hasPermission) return;
+
     const options = {
       mediaType: 'photo',
       quality: 1,
       includeBase64: false,
+      selectionLimit: 1,
     };
 
     try {
