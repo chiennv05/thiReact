@@ -41,26 +41,6 @@
       "ph11341_anh_bia_22042025": "https://example.com/anh5.jpg"
     },
     {
-      "id": "6",
-      "ph11341_ten_sach_22042025": "Python Cho Người Mới Bắt Đầu",
-      "ph11341_tac_gia_22042025": "Nguyễn Thị F",
-      "ph11341_gia_sach_22042025": 99000,
-      "ph11341_the_loai_22042025": "Lập trình",
-      "ph11341_nam_phat_hanh_22042025": 2021,
-      "ph11341_mo_ta_22042025": "Học ngôn ngữ lập trình Python qua ví dụ dễ hiểu.",
-      "ph11341_anh_bia_22042025": "https://example.com/anh6.jpg"
-    },
-    {
-      "id": "7",
-      "ph11341_ten_sach_22042025": "Phân Tích Dữ Liệu Với Excel",
-      "ph11341_tac_gia_22042025": "Hoàng Văn G",
-      "ph11341_gia_sach_22042025": 89000,
-      "ph11341_the_loai_22042025": "Phân tích dữ liệu",
-      "ph11341_nam_phat_hanh_22042025": 2022,
-      "ph11341_mo_ta_22042025": "Kỹ năng sử dụng Excel để phân tích và trực quan hóa dữ liệu.",
-      "ph11341_anh_bia_22042025": "https://example.com/anh7.jpg"
-    },
-    {
       "id": "8",
       "ph11341_ten_sach_22042025": "Cấu Trúc Dữ Liệu Và Giải Thuật",
       "ph11341_tac_gia_22042025": "Trịnh Thanh H",

@@ -171,6 +171,25 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginHorizontal: 4,
   },
+  deleteButton: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    zIndex: 1,
+  },
+  deleteIcon: {
+    width: 24,
+    height: 24,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  deleteText: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+  }
 });
 
 export default Banner; 

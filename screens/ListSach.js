@@ -6,7 +6,8 @@ import {
   StyleSheet, 
   Image,
   TextInput,
-  ScrollView
+  ScrollView,
+  Alert
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteSachAsync, fetchSach } from '../redux/Action';
@@ -22,8 +23,22 @@ const ListSach = ({ navigation }) => {
     dispatch(fetchSach());
   }, [dispatch]);
 
-  const handleDeleteSach = (id) => {
-    dispatch(deleteSachAsync(id));
+  const handleDeleteSach = (id, tenSach) => {
+    Alert.alert(
+      "Xác nhận xóa",
+      `Bạn có chắc chắn muốn xóa sách "${tenSach}" không?`,
+      [
+        {
+          text: "Hủy",
+          style: "cancel"
+        },
+        {
+          text: "Xóa",
+          onPress: () => dispatch(deleteSachAsync(id)),
+          style: "destructive"
+        }
+      ]
+    );
   };
 
   // Lọc sách theo tên
@@ -67,7 +82,7 @@ const ListSach = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.deleteButton]}
-          onPress={() => handleDeleteSach(item.id)}
+          onPress={() => handleDeleteSach(item.id, item.ph11341_ten_sach_22042025)}
         >
           <Text style={styles.buttonText}>Xóa</Text>
         </TouchableOpacity>

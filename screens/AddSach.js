@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, Alert, Image, TouchableOpacity, PermissionsAndroid, Platform } from "react-native";
 import { useDispatch } from "react-redux";
 import { addSachAsync } from "../redux/Action";
+import * as ImagePicker from 'react-native-image-picker';
 
 const AddSach = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -12,6 +13,64 @@ const AddSach = ({ navigation }) => {
   const [namPhatHanh, setNamPhatHanh] = useState("");
   const [moTa, setMoTa] = useState("");
   const [anhBia, setAnhBia] = useState("");
+  const [previewImage, setPreviewImage] = useState(null);
+
+  const requestCameraPermission = async () => {
+    if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+          {
+            title: "Quyền truy cập thư viện ảnh",
+            message: "Ứng dụng cần quyền truy cập thư viện ảnh để chọn ảnh bìa sách",
+            buttonNeutral: "Hỏi lại sau",
+            buttonNegative: "Từ chối",
+            buttonPositive: "Đồng ý"
+          }
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          return true;
+        } else {
+          Alert.alert('Thông báo', 'Bạn cần cấp quyền truy cập thư viện ảnh để sử dụng tính năng này');
+          return false;
+        }
+      } catch (err) {
+        console.warn(err);
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const handleChoosePhoto = async () => {
+    const hasPermission = await requestCameraPermission();
+    if (!hasPermission) return;
+
+    const options = {
+      mediaType: 'photo',
+      quality: 1,
+      includeBase64: false,
+      selectionLimit: 1,
+    };
+
+    try {
+      const result = await ImagePicker.launchImageLibrary(options);
+      
+      if (result.didCancel) {
+        console.log('Người dùng đã hủy chọn ảnh');
+      } else if (result.errorCode) {
+        console.log('ImagePicker Error: ', result.errorMessage);
+        Alert.alert('Lỗi', 'Không thể chọn ảnh, vui lòng thử lại');
+      } else if (result.assets && result.assets.length > 0) {
+        const source = result.assets[0].uri;
+        setAnhBia(source);
+        setPreviewImage(source);
+      }
+    } catch (error) {
+      console.log('Error: ', error);
+      Alert.alert('Lỗi', 'Đã xảy ra lỗi khi chọn ảnh');
+    }
+  };
 
   const handleAddSach = () => {
     // Kiểm tra giá sách
@@ -45,6 +104,16 @@ const AddSach = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Thêm Sách Mới</Text>
+
+      <TouchableOpacity style={styles.imageContainer} onPress={handleChoosePhoto}>
+        {previewImage ? (
+          <Image source={{ uri: previewImage }} style={styles.previewImage} />
+        ) : (
+          <View style={styles.placeholderContainer}>
+            <Text style={styles.placeholderText}>Chọn ảnh bìa</Text>
+          </View>
+        )}
+      </TouchableOpacity>
 
       <TextInput
         style={styles.input}
@@ -91,13 +160,6 @@ const AddSach = ({ navigation }) => {
         multiline
       />
 
-      <TextInput
-        style={styles.input}
-        placeholder="URL ảnh bìa"
-        value={anhBia}
-        onChangeText={setAnhBia}
-      />
-
       <Button title="Thêm Sách" onPress={handleAddSach} />
     </View>
   );
@@ -122,6 +184,32 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderRadius: 5,
     backgroundColor: "#f5f5f5",
+  },
+  imageContainer: {
+    width: '100%',
+    height: 200,
+    marginBottom: 20,
+    borderRadius: 10,
+    overflow: 'hidden',
+    backgroundColor: '#f5f5f5',
+  },
+  previewImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+  },
+  placeholderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#ddd',
+    borderStyle: 'dashed',
+    borderRadius: 10,
+  },
+  placeholderText: {
+    color: '#666',
+    fontSize: 16,
   },
 });
 
